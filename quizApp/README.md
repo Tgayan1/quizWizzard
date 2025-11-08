@@ -29,14 +29,15 @@ note:-
 ### How Vite Works
 
 - Dev Mode
-instant dev server Starts
-build only *On-Demand* Files
-Uses **HMR**(Hot Module Replacement -> only edited Part Change without Reloding Whole Server)
+    - instant dev server Starts
+    - build only *On-Demand* Files
+    - Uses **HMR**(Hot Module Replacement -> only edited Part Change without Reloding Whole Server)
 
 - Build Mode
-takes everything and bundle them (**Rollup**)
+    - takes everything and bundle them (**Rollup**)
+
 note->
-- uses *esbuild*(Go lang Based Superfast Builder) for pre-build unchangable dependancies and minification of the code
+    - uses *esbuild*(Go lang Based Superfast Builder) for pre-build unchangable dependancies and minification of the code
 
 #### Alternatives {WebPack/Parcell[Slow, Old],esbuild[Go lang Based|SuperFast|Bit Complex]}
 didn't lernt about the behind the sences yet.
