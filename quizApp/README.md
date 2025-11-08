@@ -1,38 +1,61 @@
-# sv
+# Day 01
+### Setup the Project and Learn About several tools
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+I'm gonna Build an Quiz App for Fun and to learn about the full stack. So, on the Day One i Cover Some simple tools And process
 
-## Creating a project
+## 01. Package Managers
 
-If you're seeing this, you've probably already done this step. Congrats!
+- control and manage packages that im gonna install for my projects
+- dependancies meaning the things i need to develop
+- in my sence {Svelte/Tailwind/Vite/Pretier/ESLint}
 
-```sh
-# create a new project in the current directory
-npx sv create
+### pnpm VS npm VS Yarn
 
-# create a new project in my-app
-npx sv create my-app
-```
+| ___ |pnpm|npm|yarn|
+|....|....|....|....|
+|How|Creates A Global Download Folder And After First time Download, Linked them(sylink)|Download Each time when it Gonna Set a New Project|Plug And Play(Currently not lernt but only know is configeration is hard)|
 
-## Developing
+*best* *beiginner* *tool* *is* *pnpm* *(newer pnpm is good too)*.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+note:- 
+- package.jason -> holds the list
+- pnpm-lock.yaml -> lock the specific version("It works in my machine")
 
-```sh
-npm run dev
+## 02.Dev Server
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- providing a server for development
+- im using *vite*
 
-## Building
+### How Vite Works
 
-To create a production version of your app:
+- Dev Mode
+instant dev server Starts
+build only *On-Demand* Files
+Uses HMR(Hot Module Replacement -> only edited Part Change without Reloding Whole Server)
 
-```sh
-npm run build
-```
+- Build Mode
+takes everything and bundle them (Rollup)
+note->
+- uses *esbuild*(Go lang Based Superfast Builder) for pre-build unchangable dependancies and minification of the code
 
-You can preview the production build with `npm run preview`.
+#### Alternatives {WebPack/Parcell[Slow, Old],esbuild[Go lang Based|SuperFast|Bit Complex]}
+didn't lernt about the behind the sences yet.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Setup Steps Thus Far ->
+
+- 1 Setup Vite Via pnpm
+
+    shell `pnpm create vite`
+- 2 Install relevent Dependancies while filling the each steps
+    - Svelte
+    - Sveltkit as Variant
+    - Typescript Enabled
+    - install pritter(pretying the code) and eslint(the grammerly tool for lang)
+- 3 Install Tailwind(Frogot at first Place)
+    - shell `pnpm install tailwindcss @tailwindcss/vite`
+    - configuering vite.config.ts by importing taiwind plugin
+    - create global style file in src 
+    - connet it with layout
+
+Thats it for Today.
+
