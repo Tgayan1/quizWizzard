@@ -12,7 +12,7 @@ I'm gonna Build an Quiz App for Fun and to learn about the full stack. So, on th
 ### pnpm VS npm VS Yarn
 
 | ___ |pnpm|npm|yarn|
-|....|....|....|....|
+|----|----|----|----|
 |How|Creates A Global Download Folder And After First time Download, Linked them(sylink)|Download Each time when it Gonna Set a New Project|Plug And Play(Currently not lernt but only know is configeration is hard)|
 
 *best* *beiginner* *tool* *is* *pnpm* *(newer pnpm is good too)*.
