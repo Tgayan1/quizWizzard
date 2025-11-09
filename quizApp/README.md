@@ -60,3 +60,50 @@ didn't lernt about the behind the sences yet.
 
 Thats it for Today.
 
+# Day 02
+## Creting the Architecture For Quiz App
+
+- This is Fully Personlized Quiz App -> Everyone Should Have there own enviroment
+- For Basic, Im gonna implement to Set Quizes Manually then later PDF Integration.
+- Parts
+    - Login/Sign in
+    - Customized Dashboard for Create Quizes, See the Previuos Quizes
+    - Quiz Creating Form Ability to Set the Answers as well{If Answers There}
+    - Quiz Submitting Form
+
+
+# Login/Sign in Part (Auth)
+
+- base: Client send cridentials {user Name & Password}  then server validate him then carry on the connection as client desier
+
+### HTTP VS HTTPS
+
+- always Use HTTPS{secuer icon}(opens *cryptograpic_tunnel*(not learnt) for encrypt data travels through the internet) while HTTP just send raw text.
+- both are **Stateless** meaning every request is totally isolated/ indipendent(short-term memory loss)
+
+## Authentication
+
+- ### Session Based Auth
+    - use Session database 
+    - after cridentials recieved, server genarate session id and then send it as a cookie.
+    - the rest request equipped with that cookie. then server identify the user
+    - this makes HTTP **Statefull**. server remebers the clients
+    - concs:-
+        - Less Scalable(first connect server 1 then again connect server 2,but session db lives in server 1)
+        - without HTTPS *session_theft* happens.(stealing cookies)
+- ### Token Based Auth (JWT-Json Web Tokens)
+    - don't remember anything
+    - uses **secret_key** (unique const for application/ developer make it)
+    
+    #### JWT File
+    - three parts
+        - [**header** | the recipe/ base64Url encoded] {Include the algorithm for scramble the key and the type of the file}
+        - [**payload** | details about the user/ base64Url encoded]
+        - [**Signatuer** | scrambled key using algorithm]
+    - always store the key inside `.env`(*enviorment variables*) and remeber to include it in `.gti-ignore`
+    - two types of Algorithms
+        - **HS256** Symmetric Way {Use same key for Creating and Validating a Signatuer}
+            - Both Auth and Web servers have the Common Same Key
+        - **RS256** Asymmetric Way{Use two keys [*public_key* for Validation] [*private_key* for Create the Signatuer]}
+            - in here Auth server Has the Private Key while Web servers have Public Key
+    - ex:`{"alg": "HS256","typ": "JWT"}`.`{"sub": "1234567890","name": "John Doe","admin": true,"iat": 1516239022}`.{a-string-secret-at-least-256-bits-long} => eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
