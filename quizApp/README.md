@@ -106,4 +106,4 @@ Thats it for Today.
             - Both Auth and Web servers have the Common Same Key
         - **RS256** Asymmetric Way{Use two keys [*public_key* for Validation] [*private_key* for Create the Signatuer]}
             - in here Auth server Has the Private Key while Web servers have Public Key
-    - ex:`{"alg": "HS256","typ": "JWT"}`.`{"sub": "1234567890","name": "John Doe","admin": true,"iat": 1516239022}`.{a-string-secret-at-least-256-bits-long} => eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
+    - |example |`{"alg": "HS256","typ": "JWT"}`.`{"sub": "1234567890","name": "John Doe","admin": true,"iat": 1516239022}`.{a-string-secret-at-least-256-bits-long}|`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30`|
