@@ -1,2 +1,14 @@
-<h1 class="text-3xl font-bold underline">Welcome to SvelteKit</h1>
-<p class="ms-4">Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+
+    export let data;
+</script>
+
+{#if !(data.error)}
+    {#each data.users as user}
+    <p>{user.name}</p>
+    {:else}
+    <p>No Users!</p>
+    {/each}
+    {:else}
+    <p class="text-red">{data.error}</p>
+{/if}

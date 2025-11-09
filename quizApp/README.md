@@ -107,3 +107,18 @@ Thats it for Today.
         - **RS256** Asymmetric Way{Use two keys [*public_key* for Validation] [*private_key* for Create the Signatuer]}
             - in here Auth server Has the Private Key while Web servers have Public Key
 
+# Connect Backend BaaS - supaBase
+- provide each parts of the backend
+    - Storage Part -> Database (PostgradeSQL)
+    - Security Part -> Inbuilt-Auth
+    - Logic -> Server Aplication
+
+# Setup Thus Far
+
+- Install Supbass Plugin for Sveltekit
+- Create Supabase Client 
+- Create Supabase account and configuer it witha simple test users data
+- Connect via `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_KEY` using `.env` 
+- Wrote simple api to retrive data from the database
+
+Thats it

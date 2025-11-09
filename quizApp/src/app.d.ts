@@ -8,6 +8,9 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	//typescript erro resolving for not identifying keys
+	
 }
 
 export {};
